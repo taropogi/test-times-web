@@ -1,0 +1,2 @@
+<h1><img src="images/admin/user_red.png" width="16" height="16" border="0"> <strong><c:out value="${userloggedin.firstname}" /> <c:out value="${userloggedin.lastname}" /></strong> is logged in.</h1>
+<h1><img src="images/admin/lightbulb.png" width="16" height="16" border="0"> Tips:</h1>

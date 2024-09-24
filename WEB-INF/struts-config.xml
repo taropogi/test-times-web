@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	
+	<form-beans>
+		<form-bean name="AdminReportActionForm" type="com.ivant.cms.actionform.admin.ReportActionForm" />
+		<form-bean name="UploadForm" type="com.ivant.cms.actionform.admin.UploadForm" />
+	</form-beans>
+	
+	<global-forwards>
+			<forward name="logout" path="/adminPage.jsp"/>
+			<forward name="HOME" path="/home.do"/>
+			<forward name="loginpage" path="/companylogin.do?action=loginPage"/>
+			<forward name="adminhome" path="/jsp/admin/home.jsp"/>
+			<forward name="corporatehome" path="/jsp/corporate/home.jsp"/>			
+			<forward name="SAVE" path="/jsp/admin/message.jsp"/>
+			<forward name="adminerrormsg" path="/jsp/admin/error.jsp"/>
+			<forward name="allcompanies" path="/jsp/admin/corporatecompanies.jsp"/>
+	</global-forwards>
+
+	<action-mappings>
+	
+		<action path="/home"
+			type="com.ivant.cms.action.MainAction">
+			<forward name="homepage" path="/jsp/home.jsp"/>
+		</action>
+		
+		<action path="/cataloglogin"
+			type="com.ivant.cms.action.CatalogLoginAction">
+			<forward name="cataloglogin" path="/jsp/cataloglogin.jsp"/>
+		</action>
+		
+		<action path="/services"
+			type="com.ivant.cms.action.ServicesAction">
+			<forward name="services" path="/jsp/services.jsp"/>
+		</action>
+		
+		<action path="/history"
+			type="com.ivant.cms.action.HistoryAction">
+			<forward name="history" path="/jsp/history.jsp"/>
+		</action>
+		
+		<action path="/featuredproducts"
+			type="com.ivant.cms.action.FeaturedProductsAction"
+			parameter="action">
+			<forward name="featuredproducts" path="/jsp/featuredproducts.jsp"/>
+		</action>
+		
+		<action path="/aboutus"
+			type="com.ivant.cms.action.AboutAction">
+			<forward name="page" path="/jsp/aboutus.jsp"/>
+		</action>
+
+		<action path="/catalog"
+			type="com.ivant.cms.action.CatalogAction"
+			parameter="action">
+			<forward name="showcatalog" path="/jsp/catalog.jsp"/>
+			<forward name="productdetail" path="/jsp/productdetail.jsp"/>
+			<forward name="showshoppinglist" path="/jsp/shoppinglist.jsp"/>
+		</action>
+		
+		<action path="/mailing"
+			type="com.ivant.cms.action.MailingListAction"
+			parameter="action">
+			<forward name="mailinglist" path="/jsp/mailinglist.jsp"/>
+			<forward name="thankyouemail" path="/jsp/thankyou.jsp"/>
+		</action>
+		
+		<action path="/brand"
+			type="com.ivant.cms.action.BrandAction"
+			parameter="action">
+			<forward name="showbrands" path="/jsp/brand.jsp"/>
+			<forward name="showbrandproducts" path="/jsp/brandproduct.jsp"/>
+			<forward name="showbrandinfo" path="/jsp/brandinfo.jsp"/>
+		</action>
+		
+		<action path="/news"
+			type="com.ivant.cms.action.NewsAction"
+			parameter="action">
+			<forward name="shownews" path="/jsp/news.jsp" />
+			<forward name="showindividualnews" path="/jsp/newsindividual.jsp" />
+		</action>
+		
+		<action path="/careers"
+			type="com.ivant.cms.action.CareerAction"
+			name="UploadForm"
+			validate="false"
+			parameter="action">
+			<forward name="allcareers" path="/jsp/admin/managecareers.jsp" />
+			<forward name="showcareers" path="/jsp/careers.jsp" />
+		</action>
+		
+		<action path="/tips"
+			type="com.ivant.cms.action.TipAction"
+			parameter="action">
+			<forward name="showtips" path="/jsp/tips.jsp" />
+		</action>
+	
+		<action path="/contactus"
+			type="com.ivant.cms.action.ContactUsAction"
+			parameter="action">
+			<forward name="contactus" path="/jsp/contactus.jsp"/>
+			<forward name="address" path="/jsp/address.jsp"/>
+		</action>
+		
+		<action path="/search"
+			type="com.ivant.cms.action.SearchAction"
+			parameter="action">
+			<forward name="searchpage" path="/jsp/search.jsp"/>
+		</action>
+
+		<action path="/advancedsearch"
+			type="com.ivant.cms.action.SearchAction"
+			parameter="action">
+			<forward name="searchpage" path="/jsp/advancedsearch.jsp"/>
+		</action>		
+
+		<action path="/login"
+			type="com.ivant.cms.action.LoginAction"
+			parameter="action">
+			<forward name="loginpage" path="/jsp/admin/login.jsp"/>
+			<forward name="adminchangepassword" path="/jsp/admin/adminchangepassword.jsp"/>
+			<forward name="nopage" path="/jsp/admin/nopage.jsp"/>
+		</action>
+		
+		<action path="/companylogin"
+			type="com.ivant.cms.action.corporate.CorporateLoginAction"
+			parameter="action">
+			<forward name="corporateloginpage" path="/jsp/corporate/home.jsp" />
+			<forward name="loginpage" path="/jsp/login.jsp"/>
+		</action>
+		
+		<action path="/corporateuser"
+			type="com.ivant.cms.action.corporate.CorporateUsersAction"
+			parameter="action">
+			<forward name="corporateusers" path="/jsp/corporate/users.jsp" />
+			<forward name="corporatesettings" path="/jsp/corporate/setting.jsp" />
+			<forward name="profile" path="/jsp/corporate/profile.jsp" />
+			<forward name="preferences" path="/jsp/corporate/preferences.jsp" />
+			<forward name="changepassword" path="/jsp/corporate/changepassword.jsp" />
+		</action>
+		
+		<action path="/faq"
+			type="com.ivant.cms.action.FaqAction"
+			parameter="action">
+			<forward name="showfaq" path="/jsp/corporate/faq.jsp"/>
+		</action>
+		
+		<action path="/salesorder"
+			type="com.ivant.cms.action.corporate.SalesOrderAction"
+			parameter="action">
+			<forward name="salesorders" path="/jsp/corporate/salesorder.jsp"/>
+			<forward name="salesorder" path="/jsp/corporate/singlesalesorder.jsp"/>
+		</action>
+
+		<action path="/dashboard"
+			type="com.ivant.cms.action.PageAction">
+			<forward name="page" path="/jsp/admin/home.jsp"/>
+		</action>
+
+
+		<action path="/adminfaq" 
+			type="com.ivant.cms.action.admin.AdminFaqAction"
+			name="UploadForm"
+			validate="false"
+			parameter="action">
+			<forward name="adminshowallfaq" path="/jsp/admin/adminshowallfaq.jsp" />
+			<forward name="admindeletefaq" path="/jsp/admin/admindeletefaq.jsp" />
+			<forward name="adminupdatefaq" path="/jsp/admin/adminupdatefaq.jsp" />
+			<forward name="adminshowcompanyfaqs" path="/jsp/admin/adminshowcompanyfaqs.jsp" />
+			<forward name="adminshowfaqs"   path="/jsp/admin/adminshowfaqs.jsp"/>			
+		</action>
+		
+		<action path="/adminhome" 
+			type="com.ivant.cms.action.admin.AdminHomeAction"
+			parameter="action">
+			<forward name="adminshowallhome" path="/jsp/admin/adminshowallhome.jsp" />
+			<forward name="adminupdatehome" path="/jsp/admin/adminupdatehome.jsp" />	
+			<forward name="adminshowhome"   path="/jsp/admin/adminshowhome.jsp"/>		
+		</action>
+		
+		<action path="/admincontactus" 
+			type="com.ivant.cms.action.admin.AdminContactUsAction"
+			parameter="action">
+			<forward name="adminshowallcontactus" path="/jsp/admin/adminshowallcontactus.jsp" />
+			<forward name="adminupdatecontactus" path="/jsp/admin/adminupdatecontactus.jsp" />
+			<forward name="adminshowcontactus"   path="/jsp/admin/adminshowcontactus.jsp"/>			
+		</action>
+		
+		<action path="/adminaboutus"
+			type="com.ivant.cms.action.admin.AdminAboutUsAction"
+			name="UploadForm"
+			validate="false"
+			parameter="action">
+			<forward name="adminshowaboutus"   path="/jsp/admin/adminshowaboutus.jsp"/>
+			<forward name="adminupdateaboutus" path="/jsp/admin/adminshowaboutus.jsp" />
+		</action>
+
+		<action path="/adminhistory"
+			type="com.ivant.cms.action.admin.AdminHistoryAction"
+			name="UploadForm"
+			validate="false"
+			parameter="action">
+			<forward name="adminshowhistory"   path="/jsp/admin/adminshowhistory.jsp"/>
+			<forward name="adminupdatehistory" path="/jsp/admin/adminshowhistory.jsp" />
+		</action>
+		
+		<action path="/adminservice"
+			type="com.ivant.cms.action.admin.AdminServiceAction"
+			name="UploadForm"
+			validate="false"
+			parameter="action">
+			<forward name="adminshowservice"   path="/jsp/admin/adminshowservice.jsp"/>
+			<forward name="adminupdateservice" path="/jsp/admin/adminshowservice.jsp" />
+		</action>
+		
+		<action path="/savesliderimage" 
+			type="com.ivant.cms.action.admin.AdminSliderImageAction"
+			name="UploadForm"
+			validate="true"
+			parameter="action"
+			input="/jsp/admin/adminshowsliderimage.jsp">
+			<forward name="adminshowallsliderimage" path="/jsp/admin/adminshowsliderimage.jsp" />
+		</action>
+		
+		<action path="/adminsliderimage" 
+			type="com.ivant.cms.action.admin.AdminSliderImageAction"
+			parameter="action">
+			<forward name="adminshowallsliderimage" path="/jsp/admin/adminshowsliderimage.jsp" />
+			<forward name="admincompanyproduct" path="/jsp/admin/admincompanyproduct.jsp" />			
+		</action>
+		
+		<action path="/adminproduct" 
+			type="com.ivant.cms.action.admin.AdminProductAction"
+			parameter="action">
+			<forward name="allproductcategories" path="/jsp/admin/adminproductcategories.jsp" />
+			<forward name="allproducttypes" path="/jsp/admin/adminproducttypes.jsp" />
+			<forward name="allproductgroupings" path="/jsp/admin/adminproductgroupings.jsp" />
+			<forward name="allproducts" path="/jsp/admin/adminproductitems.jsp" />
+			<forward name="allbrands" path="/jsp/admin/adminproductbrands.jsp" />
+			<forward name="admincompanyproduct" path="/jsp/admin/admincompanyproduct.jsp" />			
+		</action>
+		
+		<action path="/adminmanage"
+			type="com.ivant.cms.action.admin.ManageAction"
+			parameter="action">
+			<forward name="allnews" path="/jsp/admin/managenews.jsp" />
+			<forward name="alltips" path="/jsp/admin/managetips.jsp" />
+			<forward name="allusers" path="/jsp/admin/manageusers.jsp" />
+			<forward name="edituser" path="/jsp/admin/edituser.jsp" />
+			<forward name="allcareers" path="/jsp/admin/managecareers.jsp" />
+			<forward name="latest" path="/jsp/admin/managelatest.jsp" />
+			<forward name="editlatest" path="/jsp/admin/managelatestedit.jsp"/>
+			<forward name="mailinglist" path="/jsp/admin/managemailinglist.jsp" />
+			<forward name="createmailformailinglist" path="/jsp/admin/managesendmail.jsp"/>
+			<forward name="editnews" path="/jsp/admin/managenewsedit.jsp" />
+			<forward name="edittips" path="/jsp/admin/managetipsedit.jsp" />
+			<forward name="editcompany" path="/jsp/admin/companyedit.jsp" />
+		</action>
+		
+		<action path="/admincorporate"
+			type="com.ivant.cms.action.admin.AdminCorporateAction"
+			parameter="action">
+			<forward name="allcompanies" path="/jsp/admin/corporatecompanies.jsp"/>
+			<forward name="corporateadmins" path="/jsp/admin/corporateadmins.jsp" />
+			<forward name="editcompany" path="/jsp/admin/corporateeditcompany.jsp" />
+			<forward name="allsalesorder" path="/jsp/admin/corporatesalesorder.jsp" />
+			<forward name="individualsalesorder" path="/jsp/admin/corporatesinglesalesorder.jsp" />
+			<forward name="adminshowallfaq" path="/jsp/admin/adminshowallfaq.jsp" />
+		</action>
+		
+		<action path="/adminreports" name="AdminReportActionForm"
+			type="com.ivant.cms.action.admin.ReportAction"
+			parameter="action">
+			<forward name="report" path="/jsp/admin/reports/corporatereports.jsp"/>
+			<forward name="view_generated" path="/jsp/admin/reports/corporatereportsgenerate.jsp"/>
+		</action>
+
+		<action path="/adminreportsaggregatesales" name="AdminReportActionForm"
+			type="com.ivant.cms.action.admin.report.AggregateSalesReportAction"
+			parameter="action">
+			<forward name="report" path="/jsp/admin/reports/aggregatesales.jsp"/>
+			<forward name="view_generated" path="/jsp/admin/reports/corporatereportsgenerate.jsp"/>
+		</action>
+
+		<action path="/adminreportssalesbyso" name="AdminReportActionForm"
+			type="com.ivant.cms.action.admin.report.SalesBySONumberAction"
+			parameter="action">
+			<forward name="report" path="/jsp/admin/reports/salesforsonumber.jsp"/>
+			<forward name="view_generated" path="/jsp/admin/reports/corporatereportsgenerate.jsp"/>
+		</action>
+
+		<action path="/adminreportssalesbycompany" name="AdminReportActionForm"
+			type="com.ivant.cms.action.admin.report.SalesReportByCompanyAction"
+			parameter="action">
+			<forward name="report" path="/jsp/admin/reports/salesreportbycompany.jsp"/>
+			<forward name="view_generated" path="/jsp/admin/reports/corporatereportsgenerate.jsp"/>
+		</action>
+		
+		<action path="/adminreportssalesbycomperprod" name="AdminReportActionForm"
+			type="com.ivant.cms.action.admin.report.SalesReportByCompanyPerProduct"
+			parameter="action">
+			<forward name="report" path="/jsp/admin/reports/salesbycompanyperproduct.jsp"/>
+			<forward name="view_generated" path="/jsp/admin/reports/corporatereportsgenerate.jsp"/>
+		</action>
+		
+		<action path="/adminreportssalesbyproduct" name="AdminReportActionForm"
+			type="com.ivant.cms.action.admin.report.SalesReportByProductAction"
+			parameter="action">
+			<forward name="report" path="/jsp/admin/reports/salesbyproduct.jsp"/>
+			<forward name="view_generated" path="/jsp/admin/reports/corporatereportsgenerate.jsp"/>
+		</action>
+		
+		<action path="/adminreportssalesbyprodpermonth" name="AdminReportActionForm"
+			type="com.ivant.cms.action.admin.report.SalesReportByProductPerMonthAction"
+			parameter="action">
+			<forward name="report" path="/jsp/admin/reports/salesbyproductpermonth.jsp"/>
+			<forward name="view_generated" path="/jsp/admin/reports/corporatereportsgenerate.jsp"/>
+		</action>
+		
+		<action path="/adminreportstransactions" name="AdminReportActionForm"
+			type="com.ivant.cms.action.admin.report.TransactionSummaryAction"
+			parameter="action">
+			<forward name="report" path="/jsp/admin/reports/summarypertransaction.jsp"/>
+			<forward name="view_generated" path="/jsp/admin/reports/corporatereportsgenerate.jsp"/>
+		</action>
+		
+		<action path="/adminsetting"
+			type="com.ivant.cms.action.admin.SettingAction"
+			parameter="action">
+			<forward name="personalsetting" path="/jsp/admin/settingpersonal.jsp" />
+		</action>
+		
+		<action path="/adminsearch"
+			type="com.ivant.cms.action.admin.AdminSearchAction"
+			parameter="action">
+			<forward name="adminproductsearch" path="/jsp/admin/adminproductsearch.jsp"/>
+		</action>
+		
+	</action-mappings>
+</struts-config>

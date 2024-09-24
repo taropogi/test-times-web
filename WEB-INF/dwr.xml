@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"
+    "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+
+<dwr>
+
+	<allow>
+	
+		<create creator="new" javascript="AdminProductAction">
+			<param name="class" value="com.ivant.cms.action.dwr.AdminProductAction" />
+		</create>
+		
+		<create creator="new" javascript="AdminCompanyAction">
+			<param name="class" value="com.ivant.cms.action.dwr.AdminCompanyAction" />
+		</create>
+		
+		<create creator="new" javascript="AdminManageAction">
+			<param name="class" value="com.ivant.cms.action.dwr.AdminManageAction" />
+		</create>
+		
+		<create creator="new" javascript="AdminCompany">
+			<param name="class" value="com.ivant.cms.action.dwr.AdminCorporateAction" />
+		</create>
+		
+		<create creator="new" javascript="CorporateUser">
+			<param name="class" value="com.ivant.cms.action.dwr.CorporateAction" />
+		</create>
+		
+		<create creator="new" javascript="SalesOrderAction">
+			<param name="class" value="com.ivant.cms.action.dwr.SalesOrderAction" />
+		</create>
+		
+		<create creator="new" javascript="UpdateDBAction">
+		    <param name="class" value="com.ivant.cms.action.dwr.UpdateDBAction" />
+		</create>
+
+		<convert converter="bean" match="com.ivant.cms.entity.web.Groupings" />
+		
+		<convert converter="bean" match="com.ivant.cms.entity.Product">
+			<param name="exclude" value="grouping, brand, isValid, updatedOn, updatedBy, companyProducts"></param>
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.User">
+			<param name="exclude" value="isValid, updatedOn, updatedBy"></param>
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.Latest">
+			<param name="exclude" value="isValid, updatedOn, updatedBy"></param>
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.News">
+			<param name="exclude" value="isValid, updatedOn, updatedBy"></param>
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.Tip">
+			<param name="exclude" value="isValid, updatedOn, updatedBy"></param>
+		</convert>
+		<convert converter="bean" match="com.ivant.cms.entity.Career">
+			<param name="exclude" value="isValid, updatedOn, updatedBy"></param>
+		</convert>
+		<convert converter="bean" match="com.ivant.cms.entity.Company">
+			<param name="exclude" value="isValid, updatedOn, updatedBy"></param>
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.Department">
+			<param name="include" value="id, name, companyID" />
+			<!--<param name="exclude" value="isValid, updatedOn, updatedBy, company" />-->
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.CompanyUser" >
+			<param name="exclude" value="company, isValid, updatedOn, updatedBy, java.io.Serializable" />
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.type.UserTypes">
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.type.CMSUserTypes">
+		</convert>
+
+		<convert converter="bean" match="com.ivant.cms.entity.type.SalesOrderStatus">
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.SalesOrderItem">
+			<param name="exclude" value="description, code, productName, product" />
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.web.SalesOrderWeb">
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.web.Product">
+		</convert>
+		
+		<convert converter="bean" match="com.ivant.cms.entity.web.CompanyUserWeb">
+		</convert>
+		
+		<convert converter="bean" match="java.io.Serializable">
+		</convert>
+		
+	</allow>
+
+</dwr>

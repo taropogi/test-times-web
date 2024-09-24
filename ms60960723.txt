@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "times.com.ph",
+  "Id": "7716208a-5d1b-4940-bb4d-a0d8ac49ddab"
+}

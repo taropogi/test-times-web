@@ -1,0 +1,545 @@
+body {
+    background:url(../images/bg_cms2.jpg) top repeat-x #e7e7e7;
+    margin: 0px;
+    padding-top: 0px;		
+}
+#container {
+	margin: 0px auto;
+	text-align: left;
+	width: 950px;
+}
+#containerdash {
+	margin: auto;
+	text-align: left;
+	padding: 15px;
+	width: 920px;
+	background: #ffffff;
+}
+
+
+/* START LOGIN STYLE */
+#wrapper {
+    margin: 0 auto;
+    width: 350px;
+    padding-top: 25px;	
+}
+
+#loginbox {
+    background-color: #FFFFFF;
+    padding: 30px;
+    width: 310px;
+    /*border: thick solid #E5E5E5;*/
+    margin: auto;
+}
+
+td.gryline {
+	border-bottom: 1px solid #E4DCE3;
+}
+
+td.errormsg {
+    font-family: "Lucida Grande", Georgia, Verdana, Arial;
+    font-size: 12px;
+    font-style: normal;	
+	font-weight: normal;		
+	color: #E55D03;	
+    padding: 5px;
+    background-color: #F3F3F3;	
+}
+
+.frmuserpass {
+    /*font-family: "Lucida Grande", Georgia, Verdana, Arial;
+    font-size: 28px;
+    font-weight: bold;*/
+    font-family: Arial;
+    font-size: 14px;
+    color: #232323;
+}
+
+input.userpassfrm {
+    background-color: #FFFFFF;
+    border : 1px solid;
+    border-color: #BBBBBB;
+    font-family: "Lucida Grande", Georgia, Verdana, Arial;
+    font-size: 25px;
+    font-style: normal;	
+    width: 300px;
+    height: 38px;
+}    
+
+input.loginbtn {
+	/*background-color: #F1F1F1;
+	border: 1px solid;
+	border-color: Silver;
+	height: 38px;
+	width: 100px;
+	font-size: 20px;
+	font-family: serif;
+	font-weight: bold;
+	font-variant: normal;
+	font-style: normal;*/
+	color: #fff;
+	background: #e99d0c;
+	font: normal 11px Arial;
+	padding: 2px 3px;	
+	border: none;
+	cursor: pointer;
+} 
+
+.loginlogotxt {
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    color: #222222;
+    margin-top: 20px;
+   /*float: right;*/
+}
+
+.forgotpswd {
+	font-family: "Lucida Grande", Georgia, Verdana, Arial;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #3366CC;
+	text-decoration: none;
+}
+
+a.forgotpswd:hover {
+	font-family: "Lucida Grande", Georgia, Verdana, Arial;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #3366CC;
+	text-decoration: underline;	
+}
+
+/* END LOGIN STYLE */
+
+/* START NAV STYLE */
+#navigation {
+	overflow: hidden;
+	/*background: url(../images/nav_red_bg_actve.jpg);
+	background-color: #FF9D99;	
+	background-repeat: repeat-x;*/
+	background: url(../images/bgNav_cms.jpg) repeat-x #0079b5;
+	height: auto !important;	
+}
+
+#navigation ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	width: 940px;
+}
+
+#navigation ul li {
+	background: none;
+	display: inline;
+	float: left;
+	list-style-type: none;
+	padding: 0;
+	border-top: 2px solid #0079b5;
+}
+
+#navigation ul li a {
+	font-family: Arial;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FFFFFF;
+	display: block;	
+	padding: 10px 15px 10px 15px;
+	text-decoration: none;
+	margin-right: 1px;
+}
+
+* html #navigation ul li a {
+	float: left;
+    height: auto !important;
+}
+
+#navigation ul li a:hover {
+	font-family: Arial;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+	/*background-image: url(../images/nav_red_bg.jpg);
+	background-repeat: repeat-x;*/
+	background: url(../images/bgNav_cmsActive.jpg) repeat-x bottom #d2e0e8;		
+}
+#navigation ul li a#active {
+	font-family: Arial;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+	/*background-image: url(../images/nav_red_bg.jpg);
+	background-repeat: repeat-x;*/
+	background: url(../images/bgNav_cmsActive.jpg) repeat-x bottom #d2e0e8;	
+}
+/* END NAV STYLE */
+
+/* START SUBNAV STYLE */
+#subnavigation {
+	overflow: hidden;
+	/*background-color: #D64E56;*/
+	background: #bdd8e5;
+	padding: 5px 0px 0px 0px;
+	border-bottom: 1px solid #acc3cd;	
+}
+#subnavigation ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+	width: 950px;
+}
+#subnavigation ul li {
+	background: none;
+	display: inline;
+	float: left;
+	list-style-type: none;
+	padding: 0;
+	border-right: 1px solid #8cb5c9;
+}
+#subnavigation ul li a {
+	font-family: Arial;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;		
+	color: #000000;
+	display: block;	
+	padding: 6px 15px 6px 15px;
+}
+* html #subnavigation ul li a {
+	float: left;
+}
+#subnavigation ul li a:hover {
+	font-family: Arial;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;		
+	color: #000000;
+	background-color: #8cbed6;
+}
+#subnavigation ul li a#active {
+	font-family: Arial;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+	background-color: #8cbed6;	
+}
+/* END SUBNAV STYLE */
+
+/* START COMPANY INFO STYLE */
+#header {
+	width: 945px;
+	margin: 0px auto;
+	text-align: left;
+	padding: 20px 20px 10px 20px;
+}
+
+#header h2{
+	background: none;
+	margin:0;
+	padding:10px 0;
+	text-align:right;
+	font:normal 12px Arial;
+	color:#0080bf;
+	float: right;
+}
+
+#header a{
+	text-decoration:none;
+	color:#0080bf
+}
+
+#header a:hover, #header a:visited {
+	color:#c4112f;
+}
+/* END COMPANY INFO STYLE */
+
+/* START HEADER INFO STYLE */
+#headerinfobox {
+	background: #ffffff;	
+    padding: 10px;
+    width: 930px;
+    /*border: thin solid #E9E9E9;*/
+    margin: 0px auto 4px auto;
+}
+.headerinfotxt {
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+	font-weight: normal;	
+    color: #444444
+}
+/* END HEADER INFO STYLE */
+
+/* START MESSAGE AREA STYLE */
+#messagearea {
+	float: left;
+    background-color: #FFFFFF;
+    width: 100%;
+}
+#messagearea h1 {
+	padding: 5px;
+	font-family: Arial;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #333333;
+    background-color: #E9E9E9;
+}
+.messageareatxt {
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    color: #222222;
+}
+#messagenews {
+	float: left;
+    background-color: #FFFFFF;
+    padding: 10px;
+    width: 225px;
+	margin-left: 20px;	
+    border: thin solid #E5E5E5;	
+}
+#messagenews h1 {
+	font-family: Arial;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	color: #222222;
+	padding-bottom: 5px;		
+	border-bottom: 1px dashed #CCCCCC;	
+}
+#messageadd
+{
+	clear: left;
+	width: 100%;
+}
+#messagepaging
+{
+	clear: left;
+	padding-top: 10px;
+	width: 680px;
+}
+/* END MESSAGE AREA STYLE */
+
+/* START FILES STYLE */
+table.projfiles {
+	border: 0;
+	border-top: 1px solid #AAAAAA;	
+	border-left: 1px solid #AAAAAA;		
+	border-bottom: 3px solid #AAAAAA;
+	border-right: 1px solid #AAAAAA;		
+}
+table.projfiles th {
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+	font-weight: bold;	
+	color: #202020;	
+	padding: 5px;
+	background-color: #BEBEBC;
+}
+table.projfiles td.thumb, td.itemthumb {
+	vertical-align: top;
+	padding: 5px;
+	border-top: 1px solid #EBEBEB;
+}
+table.projfiles td.thumb {
+	width: 116px;
+}
+table.projfiles td.item {
+	font-family: Arial;
+  font-size: 12px;
+	font-weight: normal;
+	vertical-align: top;
+	padding: 5px;
+	border: 1px solid #EBEBEB;
+}
+
+table.projfiles tr.bground td {
+	background-color: #F7F7F7;
+}
+
+
+table.projfiles tr.bground2 td {
+	background-color: #FAFAD2;
+}
+
+
+table.projfiles tr.subcompany td {
+		padding-left: 50pt;
+	
+}
+
+
+.projtitle {
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+	font-weight: bold;	
+    color: #222222;
+}
+
+.projdetails {
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+	font-weight: normal;	
+    color: #746D6E;
+}
+
+.projinfo {
+    font-family: Arial;
+    font-size: 10px;
+    font-style: italic;
+	font-weight: normal;	
+    color: #746D6E;
+	line-height: 2.0em;			
+}
+
+.itemname {
+    font-family: Arial;
+    font-size: 11px;
+    font-style: normal;
+	 font-weight: normal;	
+    color: #746D6E;
+}
+
+.itemdescription {
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+	 font-weight: bold;	
+    color: #222222;
+}
+
+.itemnote {
+	font-family: Arial;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: Maroon;
+}
+
+.editdel {
+	font-family: Arial;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #6666CC;
+	text-decoration: none;
+}
+
+a.editdel:hover {
+	font-family: Arial;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #CB5468;	
+	text-decoration: underline;	
+}
+
+.addnew {
+	font-family: Arial;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: normal;
+	color: #6666CC;
+	text-decoration: none;
+}
+
+a.addnew:hover {
+	font-family: Arial;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #CB5468;	
+	text-decoration: underline;	
+}
+
+.page a
+{
+	text-decoration: none;
+	font-size: 16px;
+	color: #708090;
+	padding: 2px;
+	line-height: 1.2em;
+}
+
+.page a:hover
+{
+	text-decoration: underline;
+	font-size: 16px;
+	color: #72ADCA;
+}
+
+.page .pageselected
+{
+	font-size: 20pt;
+	text-decoration: underline;
+}
+
+input.item {
+    background-color: #FFFFFF;
+    border : 1px solid;
+    border-color: #BBBBBB;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;	
+	width: 190px;
+} 
+
+input.buttonitem {
+	/*background-color: #F9F9F9;
+	border-left: 1px solid;
+	border-top: 1px solid;
+	border-right: 3px solid;
+	border-bottom: 3px solid;
+	border-color: #5F9EA0;
+	font-family: Arial;
+	font-size: 12px;
+	font-style: normal;*/
+	color: #fff;
+	background: #e99d0c;
+	font: normal 11px Arial;
+	padding: 2px 3px;	
+	border: none;
+	cursor: pointer;
+} 
+
+select.item {
+    background-color: #FFFFFF;
+    border : 1px solid;
+    border-color: #BBBBBB;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    width: 150px;
+} 
+
+textarea.item {
+    background-color: #FFFFFF;
+    border : 1px solid;
+    border-color: #BBBBBB;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;	
+    width: 190px;
+}
+/* END FILES STYLE */
+
+.clear {
+	clear: both;
+}

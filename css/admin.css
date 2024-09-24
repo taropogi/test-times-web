@@ -1,0 +1,513 @@
+/***********************************************/
+/* HTML tag styles                             */
+/***********************************************/ 
+
+body{
+  text-align: left;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 0.7em;
+  margin: 0px;
+  color: #555555;
+  /*background: #fff;*/
+  line-height: 1.3em;
+}
+
+a{
+	color: #0066CC;
+	text-decoration: none;
+}
+
+a:link{
+	color: #0066CC;
+	text-decoration: none;
+}
+
+a:visited{
+	color: #6666CC;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #0066FF;
+	text-decoration: underline;
+}
+
+h1{
+      margin:1.2em 0 0.5em;
+      padding:0 0 0.2em 0px;
+      border-bottom:1px solid #B7C2D0;
+      font:bold 2em/1.2em "Trebuchet MS", Verdana, Sans-serif;
+      color:#444444;}
+
+    h2 {
+	margin:1.2em 0 0.5em;
+	padding:0.2em 0 0.2em 5px;
+	font:bold 1.3em/1.2em Arial, Verdana, Helvetica, sans-serif;
+	color:#FFFFFF;
+	background: #B7C2D0;
+      }
+    h3 {
+	margin:0px 0px 5px;
+	padding:5px 0px 2px;
+	font:bold 1.3em Arial, Verdana, Helvetica, sans-serif;
+	color:#555;
+	border-bottom: 1px solid #B7C2D0;
+      }
+    p {
+      font-family:Verdana, Sans-serif;
+      font-size:1em;
+      line-height:1.5em;
+      }
+
+ul{
+ list-style-type: square;
+}
+
+ul ul{
+ list-style-type: disc;
+}
+
+ul ul ul{
+ list-style-type: none;
+}
+
+ ul#navlist
+{
+text-align: left;
+list-style: none;
+padding: 0;
+margin: 0 auto;
+}
+
+ul#navlist li
+{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+ul#navlist li a
+{
+	display: block;
+	padding: 0.25em;
+	color: #E41F1F;
+	text-decoration: none;
+	background: #fff;
+	border-bottom: 1px solid #ececec;
+}
+
+#navcontainer>ul#navlist li a {
+	width: auto;
+}
+
+ul#navlist li#active a {
+	color: #E41F1F;
+	font-weight: bold;
+}
+
+ul#navlist li a:hover, ul#navlist li#active a:hover {
+	color: #E41F1F;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+/* hack to fix IE/Win's broken rendering of block-level anchors in lists */
+ul#navlist li {
+	border-bottom: 1px solid #fff;
+	padding: 0px;
+}
+/* fix for browsers that don't need the hack */
+html>body navlist li {border-bottom: none;}
+
+/***********************************************/
+/* Table Style                                 */
+/***********************************************/
+
+
+table#searchResult {
+	font-family:Verdana, Helvetica;
+	font-size:1em;
+	border-collapse:collapse;
+	border-spacing:1px;
+	margin:10px 0px 10px;
+	text-align:left;
+	width:100%;
+	min-width:400px;
+	}
+table#searchResult a {
+	border:0;
+	}
+table#searchResult a:hover {
+	text-decoration:underline;
+	}
+thead#tableHead {
+	color:#000000;
+	font-weight:bold;
+}
+thead#tableHead th {
+	background-color:#B7C2D0;
+}
+table#searchResult th, table#searchResult td {
+	padding:4px;
+	border:1px solid #FFF;
+	}
+
+table#searchResult tr { background:#F1F3F5;}
+table#searchResult tr.alt { background: #E4E9ED; }
+/*table#searchResult tr:hover { background: #fff; }*/
+
+table#searchResult td.vertTh {
+	font-weight:bold;
+	color: #444444;
+	}
+table#searchResult img {
+	border:0;
+	margin-left:2px;
+	margin-right:2px;
+	}
+table#searchResult img.dl {
+	width:9px;
+	height:11px;
+	}
+table#searchResult img.co {
+	width:11px;
+	height:9px;
+	}
+	
+/***********************************************/
+/* Layout Divs                                 */
+/***********************************************/
+#navcontainer
+{
+	width: 700px;
+	margin: 0;
+	padding: 0px;
+	text-align: right;
+	text-transform: lowercase;
+	font-size: 1em;
+	line-height: 1.1em;
+	color: #777777;
+}
+
+#container {
+	width: 730px;
+	margin: 0px auto;
+	padding: 0px;
+	text-align: left;
+	display: block;
+}
+
+#masthead{
+	width: 730px;
+	background-image: url(../images/admin/masthead_backimg2.jpg);
+	background-repeat: no-repeat;
+	height: 90px;
+	padding: 0px;
+	margin: 0px;
+}
+
+#content{
+	width: 700px;
+	padding: 0px 20px;
+	margin: 0px auto;
+}
+#footer{
+	width: 920px;
+	padding: 10px 0px 0px 0px;
+	margin: 25px auto;
+	font-size: 85%;
+	line-height: 1.5em;
+	text-align: left;
+	border-top: 1px solid #AAAAAA;
+}
+#leftBox{
+	float: left;
+	width: 500px;
+	padding: 0px 0px 0px 20px;
+	line-height: 1em;
+}
+#leftBox h2{
+	padding: 1em 0.5em 0px 0.25em;
+}
+#leftBox h3{
+	padding-left: 0.25em;
+	padding-top: 1em;
+	padding-bottom: 0.25em;
+}
+#leftBox p{
+	font-size: 0.75em;
+	margin: 0px;
+	padding: 0.25em 1em 0.25em 0.25em;
+}
+.leftBoxliner{
+	border-bottom: 1px solid #DDDDDD;
+	margin: 5px 0px 0px;
+	padding: 0px;
+	width: 210px;
+}
+#rightBox{
+	float:right;
+	width: 200px;
+	padding: 0px;
+}
+#rightBox p{
+	font-size: 0.7em;
+	margin: 0px;
+	padding: 0.2em 0em 0.2em 0.2em;
+}
+#search{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	vertical-align: top;
+}
+
+/************* #siteInfo styles ***************/
+
+#siteInfo{
+	font-size: 65%;
+	color: #777777;
+	text-align: left;
+	border-top: 1px solid #CCCCCC;
+	padding-bottom: 8px;
+	clear: both;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-left: 2px;
+}
+
+#siteInfo img{
+	vertical-align: middle;
+	padding-right: 5px;
+}
+
+#siteInfo a:hover{
+	text-decoration: none;
+	border: none;
+}
+
+
+/*********** #navBar link styles ***********/
+
+#navBar ul a:link, #navBar ul a:visited {display: block;}
+#navBar ul {list-style: none; margin: 0; padding: 0;}
+
+/* hack to fix IE/Win's broken rendering of block-level anchors in lists */
+#navBar li {
+	border-bottom: 1px solid #EEE;
+	padding: 0px;
+}
+
+/* fix for browsers that don't need the hack */
+html>body #navBar li {border-bottom: none;}
+
+
+/*********** #sectionLinks styles ***********/
+
+#sectionLinks{
+	position: relative;
+	margin: 0px;
+	padding: 25px 0px 0px;
+	font-size: 90%;
+	color: #003300;
+	width: 250px;
+}
+#sectionLinks img{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#sectionLinks h3{
+	padding: 10px 0px 2px 5px;
+}
+
+#sectionLinks a {
+	display: block;
+	padding: 5px 0px 2px 15px;
+	color: #003300;
+}
+#sectionLinks a:link, #sectionLinks a:visited{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#sectionLinks a:hover{
+	color: #003300;
+}
+
+#contactbox {
+	padding: 2px 12px 2px 5px;
+	font-size: 70%;
+	border: 1px dashed #DDDDDD;
+	text-align: right;
+	line-height: 0.2em;
+	margin: 5px 0px 0px 20px;
+}
+
+#contactbox p{
+	padding: 0px;
+	line-height: 1em;
+}
+/************** #ads styles **************/
+
+#menu{
+	float: right;
+	color: #222222;
+	text-decoration:none;
+	text-align:left;
+	display:block;
+	width:7em;
+	margin:0em;
+	padding-top: 0.2em;
+	padding-right: 0.2em;
+	padding-bottom: 0.2em;
+}
+
+#menu p{
+	padding: 5px 0px 0px;
+}
+
+#menu a, #menu a:visited {
+	text-decoration:none;
+	text-align:left;
+	color:#555555;
+	display:block;
+	padding:0.2em;
+	margin:0.25em 0;
+	font-size: 70%;
+	border-bottom: 1px solid #EEEEEE;
+}
+#menu a:hover {
+	border-bottom: 1px solid #EE3224;
+}
+.rightfloater {
+	float: left;
+	padding-right: 15px;
+}  
+.bottomliner {
+	border-bottom: 1px solid #B7C2D0;
+}
+
+.errormessage {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: red;
+}
+
+.user {
+	position: relative;
+	bottom: 2px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+.showcategoryselect {
+	display: block;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 10px 0px;
+}
+
+.formLabelText
+{
+	font-size: 10px;
+	/*font-weight: bold;*/
+}
+
+.input {
+	width: 145px;
+}
+
+.itemimage
+{
+	border: 1px solid #E5E5E5;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	padding: .3em .3em;
+	background: #FFFFFF;
+}
+
+.requiredfieldtext
+{
+	font-family: Verdana, Arial;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: normal; 
+	color: #FF3300; 
+	text-decoration: none;
+}
+
+.requiredfield
+{
+	font-family: Verdana, Arial;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal; 
+	color: #FF3300; 
+	text-decoration: none;
+}
+
+select.listings
+{ 
+	background-color: #FFFFFF; 
+	font: normal 12px Lucida Grande, Verdana, Arial, Helvetica, sans-serif; 
+	border : 1px solid;
+    border-color: #BBBBBB;
+	align: center;
+	padding: 1px;
+}
+
+.reportNavActive, .reportNavNormal
+{
+	margin: 5px 0px 5px 0px;
+}
+
+.reportNavActive a{
+	text-decoration: none;
+	font-weight: bold;
+	color:#fff;
+	padding: 3px;
+	background: #555555;
+}
+
+.reportNavActive a:hover{
+	text-decoration: none;
+	color:#fff;
+}
+
+.reportNavNormal a{
+	color: #555555;
+	font-size: 10pt;
+	text-decoration: underline;
+}
+
+.reportNavNormal a:hover{
+	text-decoration: none;
+}
+
+.reportNavNormal a:active{
+	text-decoration: none;
+}
+
+.clickable{
+	font-style:italic;
+}
+
+.clickable:hover{
+	font-weight:bold;
+	cursor:pointer;
+	text-decoration:underline;
+}
+
+table.projfiles#slider {border-collapse:collapse;}
+table.projfiles#slider tr { border-bottom: 1px solid rgb(219, 219, 219)}
+table.projfiles#slider tr .even {background:gray}
+table.projfiles#slider td {padding:10px;text-align:center}
+table.projfiles#slider td img {width:400px}
+table.projfiles#slider th{text-align:center}
+.imgDimensions {color:red;font-weight:bold}

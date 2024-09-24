@@ -1,0 +1,77 @@
+.arrowlistmenu{
+	/*width: 180px; width of accordion menu*/
+}	
+
+.arrowlistmenu h3 {
+	margin: 0px;
+	padding: 0px;
+}
+
+.arrowlistmenu .menuheader{ /*CSS class for menu headers in general (expanding or not!)*/
+	/*font: bold 14px Arial;*/
+	/*color: white;*/
+	color:#ffffff;
+	/*background: black url(titlebar.png) repeat-x center left;*/
+	margin-bottom: 2px; /*bottom spacing between header and rest of content*/
+	text-transform: uppercase;
+	padding: 6px 0 6px 25px; /*header text is indented 10px*/
+	cursor: hand;
+	cursor: pointer;
+	background:#2e79a0; /*e4e7e8;*/
+	text-decoration:none;
+	font:bold 11px Arial;
+	line-height:18px;
+	
+	background:url(../images/arrow.jpg) 15px 11px no-repeat #2e79a0;
+}
+
+.arrowlistmenu .openheader{ /*CSS class to apply to expandable header when it's expanded*/
+	/*background-image: url(titlebar-active.png);*/
+	background:url(../images/arrow.jpg) 15px 11px no-repeat #2e79a0;
+}
+
+.arrowlistmenu ul{ /*CSS for UL of each sub menu*/
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 5px; /*bottom spacing between each UL and rest of content*/
+}
+
+.arrowlistmenu ul li{
+	padding-bottom: 2px; /*bottom spacing between menu items*/
+}
+
+.arrowlistmenu ul li .opensubheader{ /*Open state CSS for sub menu header*/
+	background: lightblue !important;
+}
+
+.arrowlistmenu ul li .closedsubheader{ /*Closed state CSS for sub menu header*/
+	background: lightgreen !important;
+}
+
+.arrowlistmenu ul li a{
+	color:#000;
+	background:url(../images/box.gif) 17px 8px no-repeat #d5ecf2;
+	/*background: url(arrowbullet.png) no-repeat center left; custom bullet list image*/
+	display: block;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	padding-left: 35px; /*link text is indented 19px*/
+	text-decoration: none;
+	/*font-weight: bold;*/
+	border-bottom: 1px solid #bce4ee;
+	font-size: 90%;
+}
+
+
+/*.arrowlistmenu ul li a:visited{
+	color: #A70303;
+}*/
+
+.arrowlistmenu ul li a:hover{
+	background-color: #F3F3F3;
+}
+
+/*.arrowlistmenu ul li a.subexpandable:hover{ /*hover state CSS for sub menu header*/
+	/*background: lightblue;
+}*/

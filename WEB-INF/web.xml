@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+	<!-- General description of web application -->
+	<display-name>Times Trading</display-name>
+	<description>By Pepe Tan December 2004</description>
+
+	<!-- Context initialization parameters that define shared
+		String constants used within your application, which
+		can be customized by the system administrator who is
+		installing your application.  The values actually
+		assigned to these parameters can be retrieved in a
+		servlet or JSP page by calling:
+		
+		String value =
+		getServletContext().getInitParameter("name");
+		
+		where "name" matches the <param-name> element of
+		one of these initialization parameters.
+		
+		You can define any number of context initialization
+		parameters, including zero.
+	-->
+
+	<context-param>
+		<description>The EMAIL address of the administrator to whom questions and comments about this application should be addressed.</description>
+		<param-name>webmaster</param-name>
+		<param-value>pepe@ivant.com</param-value>
+	</context-param>
+
+	<context-param>
+		<description>the maximum file size for image upload</description>
+		<param-name>maxfilesize</param-name>
+		<param-value>5000000</param-value>
+	</context-param>
+
+	<context-param>
+		<description>the maximum file size treshhold for image upload</description>
+		<param-name>maxfilesizetreshhold</param-name>
+		<param-value>2000000</param-value>
+	</context-param>
+
+	<context-param>
+		<description>the maximum picture width for image upload</description>
+		<param-name>maxpicturewidth</param-name>
+		<param-value>5000</param-value>
+	</context-param>
+
+	<context-param>
+		<description>the width for image thumbnail upload</description>
+		<param-name>maxpicturethumbnailwidth</param-name>
+		<param-value>100</param-value>
+	</context-param>
+
+	<context-param>
+		<description>the width for image front upload</description>
+		<param-name>maxpicturefrontwidth</param-name>
+		<param-value>450</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>companyfolderlocation</param-name>
+		<param-value>/var/www/html</param-value>
+	</context-param>
+
+	<!--<context-param>
+		<param-name>companyfolderlocation</param-name>
+		<param-value>c:\html</param-value>
+		</context-param>-->
+
+	<context-param>
+		<description>the from address of emails sent to the client</description>
+		<param-name>emailfromaddress</param-name>
+		<param-value>info@times.com.ph</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>com.ivant.cms.listener.HibernateListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>com.ivant.cms.listener.HttpSessionListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>com.ivant.cms.listener.Initializer</listener-class>
+	</listener>
+	
+	<filter id="HibernateActionFilter">
+		<filter-name>HibernateActionFilter</filter-name>
+		<filter-class>com.ivant.cms.listener.HibernateFilter</filter-class>
+		<init-param>
+			<param-name>filterFor</param-name>
+			<param-value>struts action</param-value>
+		</init-param>
+	</filter>
+	
+	<filter id="HibernateDWRFilter">
+		<filter-name>HibernateDWRFilter</filter-name>
+		<filter-class>com.ivant.cms.listener.HibernateFilter</filter-class>
+		<init-param>
+			<param-name>filterFor</param-name>
+			<param-value>dwr</param-value>
+		</init-param>
+	</filter>
+	
+	<filter id="HibernateIndexFilter">
+		<filter-name>HibernateIndexFilter</filter-name>
+		<filter-class>com.ivant.cms.listener.HibernateFilter</filter-class>
+		<init-param>
+			<param-name>filterFor</param-name>
+			<param-value>index.jsp</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>HibernateActionFilter</filter-name>
+		<servlet-name>action</servlet-name>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>HibernateDWRFilter</filter-name>
+		<servlet-name>dwr-invoker</servlet-name>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>HibernateIndexFilter</filter-name>
+		<url-pattern>/index.jsp</url-pattern>
+	</filter-mapping>
+	
+	<!-- Servlet definitions for the servlets that make up
+		your web application, including initialization
+		parameters.  With Tomcat, you can also send requests
+		to servlets not listed here with a request like this:
+		
+		http://localhost:8080/{context-path}/servlet/{classname}
+		
+		but this usage is not guaranteed to be portable.  It also
+		makes relative references to images and other resources
+		required by your servlet more complicated, so defining
+		all of your servlets (and defining a mapping to them with
+		a servlet-mapping element) is recommended.
+		
+		Servlet initialization parameters can be retrieved in a
+		servlet or JSP page by calling:
+		
+		String value =
+		getServletConfig().getInitParameter("name");
+		
+		where "name" matches the <param-name> element of
+		one of these initialization parameters.
+		
+		You can define any number of servlets, including zero.
+	-->
+
+	<!-- Define mappings that are used by the servlet container to
+		translate a particular request URI (context-relative) to a
+		particular servlet.  The examples below correspond to the
+		servlet descriptions above.  Thus, a request URI like:
+		
+		http://localhost:8080/{contextpath}/graph
+		
+		will be mapped to the "graph" servlet, while a request like:
+		
+		http://localhost:8080/{contextpath}/saveCustomer.do
+		
+		will be mapped to the "controller" servlet.
+		
+		You may define any number of servlet mappings, including zero.
+		It is also legal to define more than one mapping for the same
+		servlet, if you wish to.
+	-->
+
+	<!--use web remoting servlet-->
+	
+	<!-- Standard Action Servlet Configuration (with debugging) -->
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>2</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet>
+	    <servlet-name>ConnectorServlet</servlet-name>
+	    <servlet-class>net.fckeditor.connector.ConnectorServlet</servlet-class>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+	<!--<servlet>
+		<servlet-name>testing</servlet-name>
+		<servlet-class>test.com.ivant.cms.testServlet</servlet-class>
+	</servlet>-->
+
+	<!--use web remoting servlet-->
+	<servlet>
+		<display-name>DWR Servlet</display-name>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>uk.ltd.getahead.dwr.DWRServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>false</param-value>
+		</init-param>
+	</servlet>
+
+	<!--define all servlet mappings here-->
+
+	<!-- Standard Action Servlet Mapping -->
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+        <servlet-name>ConnectorServlet</servlet-name>
+        <url-pattern>/FCKeditor/editor/filemanager/connectors/*</url-pattern>
+	</servlet-mapping>
+
+	<!--<servlet-mapping>
+		<servlet-name>testing</servlet-name>
+		<url-pattern>/testing</url-pattern>
+	</servlet-mapping>-->
+
+	<!--used for web remoting-->
+
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- Define the default session timeout for your application,
+		in minutes.  From a servlet or JSP page, you can modify
+		the timeout for a particular session dynamically by using
+		HttpSession.getMaxInactiveInterval(). -->
+
+	<session-config>
+		<session-timeout>30</session-timeout><!-- 30 minutes -->
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>home.do</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/jsp/error/errorpage.jsp</location>
+	</error-page>
+
+	<error-page>
+		<error-code>500</error-code>
+		<location>/jsp/error/errorpage.jsp</location>
+	</error-page>
+
+	<error-page>
+	  <exception-type>java.lang.Throwable</exception-type>
+	  <location>/jsp/error/errorpage.jsp</location>
+	</error-page>
+
+	<jsp-config>
+	<taglib>
+		<taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+		<taglib-location>/WEB-INF/tld/fmt.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+		<taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>http://java.sun.com/jstl/sql</taglib-uri>
+		<taglib-location>/WEB-INF/tld/sql.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>http://java.sun.com/jstl/x</taglib-uri>
+		<taglib-location>/WEB-INF/tld/x.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>http://java.sun.com/jsp/jstl/functions</taglib-uri>
+		<taglib-location>/WEB-INF/tld/fn.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>http://jakarta.apache.org/taglibs/unstandard-1.0</taglib-uri>
+		<taglib-location>/WEB-INF/tld/taglibs-unstandard.tld</taglib-location>
+	</taglib>
+
+	<taglib>
+		<taglib-uri>http://devsphere.com/articles/calltag/CallTag.tld</taglib-uri>
+		<taglib-location>/WEB-INF/tld/CallTag.tld</taglib-location>
+	</taglib>
+
+	</jsp-config>
+
+	<!--<resource-ref>
+		<description>DB Datasource Connection</description>
+		<res-ref-name>jdbc/datasource</res-ref-name>
+		<res-type>com.mysql.jdbc.jdbc2.optional.MysqlConnectionPoolDataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>-->
+
+</web-app>
+

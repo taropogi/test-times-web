@@ -1,0 +1,2 @@
+<a href="mailto:info@times.com.ph?subject=inquiry from the website"><img src="images/icon_envelope.gif" width="16" height="11" border="0" align="absmiddle" alt="Email us"/></a> 
+<a href="contactus.do?action=showContactUsPage"><img src="images/icon_help.gif" width="14" height="14" border="0" align="absmiddle" alt="How can we help?"/></a>
